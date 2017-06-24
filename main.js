@@ -18,13 +18,13 @@ function createWindow () {
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'login.html'),
+    pathname: path.join(__dirname, 'login/login.html'),
     protocol: 'file:',
     slashes: true
   }))
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -59,28 +59,31 @@ app.on(
       }
     })
 
-const selectDir =
-    function() {
+/*
+ * ============================== NOTE ==============================
+ * We use global state in order to exchange information among the various pages.
+ * Ultimately this should be updated to use the electron IPC framework:
+ * https://github.com/electron/electron/blob/master/docs/api/ipc-main.md
+ */
+
+const selectDir = function() {
   return dialog.showOpenDialog({properties: ['openDirectory']})[0];
 }
 
-const setSequence =
-    function(seq) {
+const setSequence = function(seq) {
   global.sequence = seq;
 }
 
-const setIdConfig =
-    function(userId, projectId, subprojectId, deploymentId, deploymentInfo) {
+const setIdConfig = function(userId, projectId, subprojectId, deploymentId, deploymentInfo) {
   global.metadata =
       {userId, projectId, subprojectId, deploymentId, deploymentInfo};
 }
 
-const getIdConfig =
-    function() {
+const getIdConfig = function() {
   return global.metadata;
 }
 
-    exports.selectDir = selectDir;
+exports.selectDir = selectDir;
 exports.setSequence = setSequence;
 exports.setIdConfig = setIdConfig;
 exports.getIdConfig = getIdConfig;

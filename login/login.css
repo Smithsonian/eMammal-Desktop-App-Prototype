@@ -1,0 +1,22 @@
+#login-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#login-card {
+  margin: 12px 0;
+  padding: 12px;
+}
+
+.mdl-button.dialog-close {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+dialog .mdl-dialog__title {
+  font-size: 20px;
+  padding: 0;
+}
