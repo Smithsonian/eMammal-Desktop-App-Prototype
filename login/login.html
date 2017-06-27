@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>gMammal</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-blue.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>  
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="login.js"></script>
+    <script>if (window.module) module = window.module;</script>
+  </head>
+  <body>
+    <div id="login-container">
+      <div class="mdl-card mdl-shadow--2dp" id="login-card">
+        <div class="mdl-card__title">
+          <div class="mdl-card__title-text">eMammal</div>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="username">
+          <label class="mdl-textfield__label" for="username">Username</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" id="password">
+          <label class="mdl-textfield__label" for="password">Password</label>
+        </div>
+        <div class="mdl-card__actions">
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="login">
+            Load Metadata
+          </button>
+        </div>
+      </div>
+      <button id="load-new-photos-btn" class="mdl-button mdl-js-button mdl-button--raised">
+        Load New Photos
+      </button>
+    </div>
+    <dialog id="load-photos-dialog" class="mdl-dialog">
+      <h4 class="mdl-dialog__title">Select Deployment</h4>
+      <button id="load-photos-dialog-close" class="mdl-button mdl-js-button mdl-button--icon dialog-close">
+        <i class="material-icons">close</i>
+      </button>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="project-select-div">
+        <select class="mdl-textfield__input" id="project-selector" name="project"></select>
+        <label class="mdl-textfield__label" for="project">Select Project</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="subproject-select-div">
+        <select class="mdl-textfield__input" id="subproject-selector" name="subproject"></select>
+        <label class="mdl-textfield__label" for="subproject">Select Subproject</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" id="deployment-select-div">
+        <select class="mdl-textfield__input" id="deployment-selector" name="deployment"></select>
+        <label class="mdl-textfield__label" for="deployment">Select Deployment</label>
+      </div>
+      <div class="mdl-dialog__actions">
+        <button id="load-photos-submit-btn" class="mdl-button mdl-js-button mdl-button--raised">
+          Load Photos
+        </button>
+      </div>
+    </dialog>
+    <dialog id="deployment-info-dialog" class="mdl-dialog">
+      <h2 class="mdl-dialog__title">Camera Deployment Info</h2>
+      <button id="deployment-info-dialog-close" class="mdl-button mdl-js-button mdl-button--icon dialog-close">
+        <i class="material-icons">close</i>
+      </button>
+      <div id="deployment-info-subproject"></div>
+      <div id="deployment-info-deployment"></div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input id="camera-latitude-input" class="mdl-textfield__input" type="text">
+        <label class="mdl-textfield__label" for="camera-latitude-input">Camera Latitude</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input id="camera-longitude-input" class="mdl-textfield__input" type="text">
+        <label class="mdl-textfield__label" for="camera-longitude-input">Camera Longitude</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input id="camera-id-input" class="mdl-textfield__input" type="text">
+        <label class="mdl-textfield__label" for="camera-id-input">Camera ID</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input id="detection-distance-input" class="mdl-textfield__input" type="text">
+        <label class="mdl-textfield__label" for="detection-distance-input">Detection Distance</label>
+      </div>
+      <div id="camera-operational">
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="camera-operational-checkbox">
+          <input type="checkbox" id="camera-operational-checkbox" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">Camera working at pickup?</span>
+        </label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <textarea id="comments" class="mdl-textfield__input" type="text" rows="3"></textarea>
+        <label class="mdl-textfield__label" for="comments">Comments</label>
+      </div>
+      <div class="mdl-dialog__actions">
+        <button id="deployment-info-submit-btn"
+            class="mdl-button mdl-js-button mdl-button--raised">
+          Save Deployment Info
+        </button>
+      </div>
+    </dialog>
+  </body>
+</html>

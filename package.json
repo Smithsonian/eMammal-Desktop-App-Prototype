@@ -1,0 +1,20 @@
+{
+  "name": "gMammal",
+  "version": "0.0.1",
+  "description": "Electron-based replacement for Smithsonian eMammal app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "dialog-polyfill": "^0.4.7",
+    "electron": "~1.6.2",
+    "electron-json-storage": "3.0.5",
+    "exif": "0.6.0",
+    "fuzzy": "^0.1.3",
+    "moment": "2.18.1",
+    "rsvp": "3.5.0",
+    "node-zip":"1.1.1",
+    "@google-cloud/storage":"1.1.1"
+  }
+}
