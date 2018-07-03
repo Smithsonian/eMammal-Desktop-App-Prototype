@@ -1,5 +1,6 @@
 # eMammal-Desktop-App-Prototype
-Open source repo for the new prototype of the eMammal Desktop App.
+Open source repo for the new prototype of the eMammal Desktop App. This project is defunct but is 
+stored here for potential future use.
 
 Copyright 2017-2018 Smithsonian Institution
 
